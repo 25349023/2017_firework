@@ -1323,11 +1323,11 @@ int main(){
         if (kbhit() != 0){
             break;
         }
-        int x = rand() % 31, y = rand() % 16;
-        for (int i = 0; i < 11; i++){
+        int x = rand() % 31, y = rand() % 16, area = rand() % 4;
+        for (int i = 0; i < 11; i++){ // eleven pictures
             gotoxy(x, y);
-            for (int j = 0; j < 11; j++){
-                for (int k = 0; k < 11; k++){
+            for (int j = area; j < 11 - area; j++){ // row
+                for (int k = area; k < 11 - area; k++){ // column
                     if (matrix[i][j][k] == 1){
                         cout << bfire;
                     }
@@ -1359,22 +1359,18 @@ int main(){
     }
     gotoxy(4, 2);
     for (int i = 0; i < 18; i++){
-
         print_a_number_animation(&a[0][0][0], i, 7, 11, 4, 2, "    ");
     }
     gotoxy(4, 2);
     for (int i = 0; i < 16; i++){
-
         print_a_number_animation(&p1[0][0][0], i, 7, 17, 4, 2, "    ");
     }
     gotoxy(4, 2);
     for (int i = 0; i < 16; i++){
-
         print_a_number_animation(&p2[0][0][0], i, 7, 23, 4, 2, "    ");
     }
     gotoxy(4, 2);
     for (int i = 0; i < 9; i++){
-
         print_a_number_animation(&y[0][0][0], i, 7, 29, 4, 2, "    ");
     }
 
@@ -1382,9 +1378,6 @@ int main(){
     SetColor(14, 0);
     gotoxy(9, 10);
     for (int i = 0; i < 20; i++){
-        SetColor(12, 0);
-        print_a_number(&h[0][0][0], 16, 7, 5, 4, 2, "    ");
-        SetColor(14, 0);
         print_a_number_animation(&two[0][0][0], i, 7, 5, 9, 10, "         ");
     }
     gotoxy(9, 10);
@@ -1399,8 +1392,6 @@ int main(){
     for (int i = 0; i < 13; i++){
         print_a_number_animation(&seven[0][0][0], i, 7, 23, 9, 10, "         ");
     }
-
-
 
     gotoxy(0, 27);
     getchar();
