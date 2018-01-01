@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <cstdlib>
 #include <windows.h>
 #include <ctime>
@@ -1284,7 +1285,7 @@ void print_a_number_animation(int *num, int n, int _j, int _k, int x, int y, str
     gotoxy(x, y);
     for (int j = 0; j < _j; j++){
         for (int k = 0; k < _k; k++){
-            if (*(num + n*_j*_k + j*_k + k) == 1){
+            if (*(num + n*_j*_k + j*_k + k) == 1){  // equal to num[n][j][k]
                 cout << bfire;
             }
             else if (*(num + n*_j*_k + j*_k + k) == 2){
@@ -1302,28 +1303,13 @@ void print_a_number_animation(int *num, int n, int _j, int _k, int x, int y, str
     Sleep(10);
 }
 
-void print_a_number(int *num, int n, int _j, int _k, int x, int y, string indent = ""){
-    gotoxy(x, y);
-    for (int j = 0; j < _j; j++){
-        for (int k = 0; k < _k; k++){
-            if (*(num + n*_j*_k + j*_k + k) == 1){
-                cout << bfire;
-            }
-            else {
-                cout << "  ";
-            }
-        }
-        cout << endl << indent;
-    }
-}
-
 int main(){
     srand(time(NULL));
     while (true){
         if (kbhit() != 0){
             break;
         }
-        int x = rand() % 31, y = rand() % 16, area = rand() % 4;
+        int x = rand() % 46, y = rand() % 16, area = rand() % 4;
         for (int i = 0; i < 11; i++){ // eleven pictures
             gotoxy(x, y);
             for (int j = area; j < 11 - area; j++){ // row

@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1483266750 source:d:\program\c_and_c++\2017_firework\main.cpp
+1514557718 source:d:\program\c_and_c++\2017_firework\main.cpp
 	<iostream>
+	<cstdio>
 	<cstdlib>
 	<windows.h>
 	<ctime>
